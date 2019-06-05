@@ -2,6 +2,7 @@ from odoo import models, fields, api
 
 class OpenacademySession(models.Model):
     _name = 'openacademy.session'
+    _description = "Sessions for OpenAcademy"
     
     name = fields.Char(string="Name")
     
