@@ -9,8 +9,7 @@ class OpenacademySession(models.Model):
     master_id = fields.Many2one('res.partner', string="Master")
     attendee_ids = fields.Many2many('res.partner', string="Attendees")
     
-    class_id = fields.Many2one('openacademy.class', String="Class")
+    class_id = fields.Many2one('openacademy.class', string="Class")
     
-    state = fields.Selection([('preparation','In Preparation'),
-                              ('ready','Ready'),
-                              ('archived','Archived')], string="State")
+    state = fields.Selection([('preparation','In Preparation'),('ready','Ready')], string="State")
+    archived = fields.Boolean(string="Archived")

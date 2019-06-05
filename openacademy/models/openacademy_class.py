@@ -8,6 +8,6 @@ class OpenacademyClass(models.Model):
     
     level = fields.Integer(string="Level")
     
-    session_ids = fields.Many2many('openacademy.session', string="Sessions")
+    session_ids = fields.One2many('openacademy.session', 'class_id', string="Sessions")
     
     
