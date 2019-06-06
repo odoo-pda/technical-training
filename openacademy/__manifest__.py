@@ -26,6 +26,7 @@
     'data':        [
         "security/ir.model.access.csv",
         "data/openacademy_data.xml",
+        "views/openacademy_course.xml",
     ],
     # only loaded in demonstration mode
     'demo':        [],

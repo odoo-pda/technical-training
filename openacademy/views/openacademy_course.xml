@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="openacademy_course_form_view" model="ir.ui.view">
+        <field name="name">openacademy.course.form.view</field>
+        <field name="model">openacademy.course</field>
+        <field name="arch" type="xml">
+            <form string="Courses">
+
+                 <sheet>
+                      <group>
+                          <field name="name"/>
+                          <field name="responsible_id" />
+                          <field name="level" />
+                          <field name="session_ids"/>
+                      </group>
+                      <notebook>
+                          <page string="Description" name="desc" >
+                              <field name="description"/>
+                          </page>
+                          <page string="Sessions" name="sessions" >
+                              <field name="session_ids" />
+                          </page>
+                      </notebook>
+                    <label for="session_ids"/>
+                    <field name="session_ids"/>
+                  </sheet>
+                
+            </form>
+        </field>
+    </record>
+    
+    <menuitem name="OpenAcademy" id="menu_root_openacademy"/>
+    
+     <record model="ir.actions.act_window" id="action_course">
+      <field name="name">openacademy course</field>
+      <field name="res_model">openacademy.course</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem name="CoursesTop" id="menu_course_top" parent="menu_root_openacademy"/>
+    <menuitem name="CoursesNOTop" id="menu_course" parent="menu_course_top" action="action_course"/>
+    
+</odoo>
